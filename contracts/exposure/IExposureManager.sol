@@ -244,7 +244,7 @@ interface IExposureManager {
         uint256 swapAmount,
         uint256 maxSlippage,
         uint256 epoch
-    ) external;
+    ) external returns (uint256);
 
     /**
      * @notice Authorizes a buy in an ExposureAsset contract.
@@ -301,4 +301,6 @@ interface IExposureManager {
      * - Caller must be the owner.
      */
     function setAuthorizedTransferee(address _account, bool _value) external;
+    function exposureAssetAddresses(address _address) external view returns (address);
+
 }
